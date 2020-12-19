@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e  # exit on failure
+set -u  # treat unset variables as an error
+
+# args
+ADDRESS="$1"
+LANGUAGE="$2"
+
+
+# get script path without realpath
+pushd "$(dirname "$0")" > /dev/null
+SCRIPT_PATH=$(pwd -P)
+popd > /dev/null
+
+MESSAGE_FILE="$SCRIPT_PATH/../message_templates/${LANGUAGE}/reset_message.txt"
+/opt/kulloshooter/kullo-shooter --to "$ADDRESS" --messageFile "$MESSAGE_FILE"

@@ -1,0 +1,22 @@
+Du hast eine neue Nachricht unter deiner Kullo-Adresse __KULLO_ADDRESS__ erhalten! Öffne die Kullo-App, um die Nachricht zu lesen. Du kannst die App hier herunterladen: https://www.kullo.net/
+
+Du erhältst diese Nachricht, weil du über neue Kullo-Nachrichten informiert werden wolltest. Wenn du nicht länger daran interessiert bist, klicke bitte hier:
+__CANCEL_LINK__
+
+Viele Grüße
+Dein Kullo-Team
+
+
+-- 
+Kullo GmbH i.L.
+Kranzplatz 5-6
+65183 Wiesbaden
+
+Vertretungsberechtigte Liquidatoren:
+Simon Warta, Daniel Seither
+
+Registergericht: Amtsgericht Wiesbaden
+Registernummer: HRB 27626
+
+Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:
+DE294537976

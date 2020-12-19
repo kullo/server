@@ -1,0 +1,12 @@
+local:
+    driver: postgres
+    open: host=127.0.0.1 user=kullo password=kullo dbname=kullo sslmode=disable
+
+integrationtest:
+    driver: postgres
+    open: host=127.0.0.1 user=kullotest password=kullotest dbname=kullotest sslmode=disable
+
+production:
+    driver: postgres
+    open: host=127.0.0.1 port=15432 user=kullo password=$PGPASS dbname=kullo
+

@@ -1,0 +1,35 @@
+#!/bin/bash
+set -e  # exit on failure
+set -u  # treat unset variables as an error
+
+# args
+KULLO_ADDRESS="$1"
+RECIPIENT_ADDRESS="$2"
+USERNAME="$3"
+CANCEL_SECRET="$4"
+LANGUAGE="$5"
+
+# config
+FROM_ADDRESS="Kullo Support <hi@kullo.net>"
+case "$LANGUAGE" in
+    de) SUBJECT="Neue Kullo-Nachricht erhalten" ;;
+     *) SUBJECT="You received a new Kullo message" ;;
+esac
+CANCEL_LINK="https://accounts.kullo.net/notifications/cancel?u=${USERNAME}&s=${CANCEL_SECRET}"
+
+
+# get script path without realpath
+pushd "$(dirname "$0")" > /dev/null
+SCRIPT_PATH=$(pwd -P)
+popd > /dev/null
+
+MESSAGE_TEMPLATE_FILE="$SCRIPT_PATH/../message_templates/${LANGUAGE}/message_notification.txt"
+MESSAGE=$(<"$MESSAGE_TEMPLATE_FILE")
+MESSAGE=${MESSAGE/__KULLO_ADDRESS__/${KULLO_ADDRESS}}
+MESSAGE=${MESSAGE/__CANCEL_LINK__/${CANCEL_LINK}}
+
+echo "$MESSAGE" | mail \
+    -s "$SUBJECT" \
+    -a "From: $FROM_ADDRESS" \
+    -a "Content-Type: text/plain; charset=utf-8" \
+    "$RECIPIENT_ADDRESS"

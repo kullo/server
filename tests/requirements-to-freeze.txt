@@ -1,0 +1,5 @@
+# see http://www.kennethreitz.org/essays/a-better-pip-workflow
+PyYAML
+psycopg2
+requests
+requests-toolbelt
